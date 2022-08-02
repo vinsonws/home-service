@@ -1,0 +1,12 @@
+server:
+  port: 20001
+home:
+  base: ${user.home}/home-dir
+  dir:
+    sqlite: ${home.base}/sqlite
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:${home.dir.sqlite}/main.db
+  jpa:
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
